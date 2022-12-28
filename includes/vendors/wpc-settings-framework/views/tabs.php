@@ -18,7 +18,7 @@ if ( empty( $active_tab ) && isset( $_COOKIE[ $cookie_name ] ) && ! empty( $_COO
 }
 ?>
 <div class="wrap wpcsf-wrap wpcsf-tab-wrap">
-	<?php screen_icon(); ?>
+	<?php // screen_icon(); ?>
 	<?php
 		$links = array();
 		foreach( $this->wp_settings_tabs[ $menu_slug ] as $tab_id => $tab ) :
@@ -66,7 +66,7 @@ if ( empty( $active_tab ) && isset( $_COOKIE[ $cookie_name ] ) && ! empty( $_COO
 			if ( $active_tab == $tab_id ) {
 				$class[] = 'wpcsf-active-tab';
 			}
-			echo "<div class='".implode( $class, ' ' )."' id='{$tab_id}'>\n";
+			echo "<div class='".implode(' ', $class )."' id='{$tab_id}'>\n";
 
 			foreach( $tab as $section ) {
 				if ( $section['title'] )

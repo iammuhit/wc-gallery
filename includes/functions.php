@@ -755,7 +755,14 @@ function wc_gallery_after_setup_theme() {
 		$name_crop = $size . '_crop';
 		$name_enable = $size . '_enable';
 
-		$width = get_option( WC_GALLERY_PREFIX . $name_w, $value['size_w'] );
+		$value = wp_parse_args((array) $value, [
+			'size_w' => 0,
+			'size_h' => 0,
+			'crop'   => false,
+			'enable' => false,
+		]);
+
+		$width = get_option( WC_GALLERY_PREFIX . $name_w, $value['size_w'] ?? '' );
 		$height = get_option( WC_GALLERY_PREFIX . $name_h, $value['size_h'] );
 		$crop = get_option( WC_GALLERY_PREFIX . $name_crop, $value['crop'] );
 		$enable = get_option( WC_GALLERY_PREFIX . $name_enable, $value['enable'] );

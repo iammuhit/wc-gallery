@@ -1,5 +1,5 @@
 <div class="wrap wpcsf-wrap">
-	<?php screen_icon(); ?>
+	<?php // screen_icon(); ?>
 	<h2 id="theme-options-heading"><?php echo esc_html( $o['page_title'] ); ?></h2>
 
 	<?php if ( isset( $_GET['settings-updated'] ) ) : ?>
